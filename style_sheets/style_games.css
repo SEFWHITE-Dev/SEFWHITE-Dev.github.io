@@ -122,7 +122,8 @@ h2 {
 
 /* Content */
 .content {
-  background-color: white;
+  /* background-color: white; */
+  color: white;
   padding: 10px;
 }
 
