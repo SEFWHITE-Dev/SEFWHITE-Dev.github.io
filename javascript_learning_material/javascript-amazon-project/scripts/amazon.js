@@ -65,6 +65,8 @@ cartModule.addToCart('id');
 // returns empty 
 loadProducts(renderProductsGrid);
 
+
+
 // Callback: a function to run in the future
 function renderProductsGrid() {
 
@@ -94,8 +96,8 @@ function renderProductsGrid() {
               ${product.getPrice()}
             </div>
 
-            <div class="product-quantity-container">
-              <select>
+            <div class="product-quantity-container js-product-quantity-container">
+              <select id="selectedItemAmount-${product.id}">
                 <option selected value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -146,14 +148,22 @@ function renderProductsGrid() {
     });
 
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-  }
+  };
+
+  updateCartQuantity();
 
   document.querySelectorAll('.js-add-to-cart-button').forEach((button) => {
     button.addEventListener('click', () => {
       // the dataset property gives us all of the 'data' attributes attatched to the element
       const selectedProductId = button.dataset.productId; // product-name => productName the name is automatically converted
-
-      addToCart(selectedProductId);
+      
+      const itemAmount = document.getElementById(`selectedItemAmount-${selectedProductId}`);
+      let amount = itemAmount.value;
+      
+      for (let i = 0; i < amount; i++){
+        addToCart(selectedProductId);
+      }
+      
       updateCartQuantity();
     });
   });

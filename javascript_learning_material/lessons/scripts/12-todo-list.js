@@ -1,13 +1,6 @@
 
 const todoList = [ 
-  {
-    name  : 'make din dins',
-    date: '2020-23-3',
-  },
-  {
-    name  : 'make wash up',
-    date: '2020-23-3',
-  },
+
 ];
 
 function renderTodoList() {

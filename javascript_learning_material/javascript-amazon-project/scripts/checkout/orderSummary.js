@@ -143,9 +143,11 @@ export function renderOrderSummary() {
       cartQuantity += cartItem.quantity;
     });
 
-    document.querySelector('.js-checkout-header').innerHTML = 
-  `${cartQuantity} items`;
-  }
+    document.querySelector('.js-checkout-header').innerHTML = `${cartQuantity} items`;
+   // document.querySelector('.js-item-count-total').innerHTML = `Items(${cartQuantity})`;
+  };
+
+  
 
   updateCheckoutHeader();
 
