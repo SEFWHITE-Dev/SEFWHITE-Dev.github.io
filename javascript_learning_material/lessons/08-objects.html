@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Objects</title>
+  </head>
+
+  <body>
+
+    <script>
+      // an Object groups multiple values together
+      // despite being declared as a 'const', it is possible to change the properties within the object
+      const product = {
+        name: 'socks', // property-value-pair
+        price: 7890
+      };
+
+      console.log(product);
+      console.log(product.name);
+
+      product.name = 'pants';
+      product.price = 12390;
+
+      console.log(product);
+
+      product.newProperty = true; // it is possible to add new properties to objects, by just declaring the new property name
+      console.log(product);
+
+      delete product.newProperty; // deleting a property is prefaced with the 'delete' key word
+      console.log(product);
+
+      console.log(typeof product); // returns 'object'
+
+
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        rating: {     // nested object
+          stars: 4.5,
+          count: 90
+        },
+        // functions can also be stored in objects as they are considered as a type of 'value' in JS
+        // a function inside an object is called a method. e.g. console.log() is a method
+        fun: function functionName(){   
+          console.log('funciton insode the object');
+        }
+      }
+      console.log(product2['name']); // bracket notation gets the same property as dot notation
+      console.log(product2['delivery-time']) // bracket notation is used when dot can't be used
+
+      console.log(product2.rating.stars);
+
+      product2.fun();
+
+      // JSON object with the stringify method to convert JS object into JSON string
+      console.log(JSON.stringify(product2));
+
+      const jsonString = JSON.stringify(product2);
+
+      // JSON parse to convert JSON back into JS
+      console.log(JSON.parse(jsonString));
+
+      // Auto-Boxing: JS wraps a string in a box
+      console.log('jeje'.length);
+      console.log('jeje'.toUpperCase());
+
+      // Objects are references
+      const obj1 = {
+        message: 'hello',
+      };
+
+      // this doesn't make a copy of obj1, it just copies the reference to it
+      const obj2 = obj1;
+
+      // const prevents you from changing the reference to the variable
+      // const doesn't prevent you from reaching into the variable and changing the value that it's pointing to
+      obj1.message = 'goodbye';
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message: 'hello'
+      };
+
+      // objects cannot be compared directly. Here they are comparing the references not the values inside, therefore returns false
+      console.log(obj3 === obj1);
+      console.log(obj2 === obj1); // this returns true as both objects are pointing to the same reference
+
+      const obj4 = {
+        message: 'hello',
+        price: 900,
+        desc: 'noot'
+      };
+
+      //const message = obj4.message;
+      // Destructuring: takes the property out of the object, to be saved within the variable
+      // only works with properties which share the same name as the variable
+      // A shorthand way of writing the above code
+      const { message, price, description } = obj4;
+      console.log(price); // returns the 'price' value stored in obj4
+      console.log(description); // returns 'null' since there is no such property called 'description'
+
+
+      const obj5 = {
+        ///message: message
+        message, // the short hand way of writing the above
+
+        // method: function foo2() {
+        //   console.log('method longhand');
+        // },
+        method() { // the short hand way of writing the above
+          console.log('method shorthand');
+        }
+
+      };
+      console.log(obj5);
+      obj5.method();
+
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

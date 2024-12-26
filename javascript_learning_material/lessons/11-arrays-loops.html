@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Arrays & Loops</title>
+    
+    <style>
+     
+    </style>
+
+  </head>
+
+  <body>
+    <script>
+
+/*
+      const myArray = [10, 20, 40];
+
+      console.log(myArray);
+
+      myArray[0]; //the first index of the array
+
+      myArray[0] = 99;
+
+      [1, 'hello', true, {name: 'socks'}, [1, 4, 2]];
+
+      console.log(typeof[1, 2]); // an array is an object, but a special type of object
+      Array.isArray([1,2]); // a specific array returns true
+
+      myArray.push(100); // adds something to the last index of the array
+      myArray.splice(0, 1); // remove an element of the array
+
+      console.log(myArray);
+
+      let i = 1;
+
+      // while (i < 100) {
+      //   console.log(i);
+      //   i += 1
+      // }
+
+      for (let i = 1;i <= 5; i++) {
+        console.log(i);
+      }
+
+      let randNum = 0;
+
+      while (randNum < 0.5) {
+        randNum = Math.random();
+      }
+
+      console.log(randNum);
+
+      const todoList = [
+        'make din dins',
+        'wash up',
+        'popp'
+      ];
+
+      for (let index = 0; index < todoList.length; index++) {
+        console.log(index);
+        const value = todoList[index];
+        console.log(value);
+      }
+
+      const nums = [1, 2, 1, 3, 5];
+      let total = 0;
+
+      for (let i = 0; i < nums.length; i++) {
+        total += nums[i];
+      }
+
+      console.log(total);
+
+      const numsDoubled = []; // create a new array with each element's value doubled
+
+      for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        numsDoubled.push(num * 2);
+      }
+
+      console.log(numsDoubled);
+*/
+
+      const array1 = [1, 2, 3]; // Arrays are references
+      const array2 = array1; // array2 doesn't contain the values of array1 but only its reference
+      
+     // array2.push(4); // even though array2 was given a new element, array1 is also affected
+
+     // console.log(array1);
+     // console.log(array2);
+
+      const array3 = array1.slice(); // this will make a copy of the values within array1. array3 will also point to a different reference
+
+      array3.push(5);
+      console.log(array1);
+      console.log(array3);
+
+      const [firstValue, secondValue] = [1, 2, 3]; // it is possible to directly reference the value within an element of the array
+
+      for (let i = 1; i <= 10; i++) {
+        
+        if (i % 3 === 0) { // if i is divisible by 3 (the remainder is 0)
+          continue;
+        }
+        
+        console.log(i);
+
+        if (i === 8) {
+          break;
+        }
+      }
+
+      let i = 1;
+
+      while (i <= 10) {
+        if (i % 3 === 0) {
+          i++; // when using 'continue' in a while loop it is required to add the increment step before it, otherwise an infinite loop will occur
+          continue;
+        }
+        console.log(i);
+        i++;
+      }
+
+      const nums = [1,1,3];
+
+      function doubleArray(inputArray) {
+        const numsDoubled = []; // create a new array with each element's value doubled
+
+        for (let i = 0; i < inputArray.length; i++) {
+          const num = inputArray[i];
+
+          if (num === 0) {
+            return numsDoubled;
+          }
+
+          numsDoubled.push(num * 2);
+        }
+        return numsDoubled;
+      }
+
+      console.log(doubleArray(nums));
+      console.log(doubleArray([2,4,7,0,9]));
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

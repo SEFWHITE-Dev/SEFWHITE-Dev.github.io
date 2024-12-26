@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> DOM Projects</title>
+  </head>
+
+  <body>
+
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="subscribe()">Subscribe</button>
+
+    <p>E-Commerce Shipping Calculator    </p>
+    <input placeholder="Cost of Order" class="js-cost-input" onkeydown="handleCostKeyDown(event)"> <!-- a HTML tag without a closing tag is called a 'VOID' tag-->
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+
+      String(10918364); // convert an int to string
+      console.log('25' - 5); // type coercion (automatic type conversion)
+      
+      // window is a built in object that represents the browser. JS automatically adds in the window obj when referencing its properties
+      window.document;
+      window.console;
+      window.alert();
+
+      function handleCostKeyDown(event) {
+        console.log(event.key);
+        if (event.key === 'Enter') {
+          calculateTotal();
+        }
+      }
+
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        // get the value within an Element
+        let cost = Number(inputElement.value); // Number() JS function to convert string to int
+
+        console.log(typeof cost); // whenever we get a value from DOM it will be string
+
+        if (cost < 40) {
+          cost += 10;
+        }
+
+        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        if (buttonElement.innerText === 'Subscribe'){
+          buttonElement.innerHTML = 'Subscribed';
+        }
+        else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+
+
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

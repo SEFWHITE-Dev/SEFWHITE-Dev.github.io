@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> DOM</title>
+  </head>
+
+  <body>
+
+    <button>hello</button>
+
+    <button class="js-button">second button</button> <!-- 'js-' is used to show it is being used by JS-->
+
+    <script>
+      // Document Object Model: built-in JS object
+      // the document object and HTML page are linked
+      // the document object represents/models the webpage
+      
+/*
+      document.body.innerHTML = 'hello';
+
+      console.log(document.title);
+      document.title = ' New DOM Title ';
+
+      console.log(document.body);
+      console.log(typeof document.body); // document.body is just an object
+      console.log(document.body.innerHTML);
+
+      document.body.innerHTML = '<button> New Button  </button>';
+*/
+      
+      // lets us get any element from the page and put it inside JS
+      document.querySelector('button'); // this will get the first 'button' elelment from the HTML page
+      console.log(document.querySelector('button').innerHTML); // every HTML element has the innerHTML property
+      document.querySelector('button').innerHTML = 'changed';
+
+      console.log(document.querySelector('.js-button')); // starting with a . will search for a class
+
+      // DOM combines JS and HTML together, it gives JS full control of the webpage
+      const buttonElement = document.querySelector('.js-button'); // possieble to save the HTML element as a JS object
+      console.log(buttonElement);
+
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Booleans</title>
+  </head>
+
+  <body>
+
+    <script>
+
+      true
+      false
+      // == tries to convert both values into the same data type
+      // === compares the two values of the same type. !== is always used in js
+
+      // returns true even though they are of two different types. they are converted to ints
+      console.log(5 == '5.00'); 
+
+      // returns false
+      console.log(5 === '5.00'); 
+      console.log(5 !== '5.00'); 
+
+      const value = 5;
+
+      if(value < 6) {
+        console.log("return true");
+      } else {
+        console.log("return false");
+      }
+
+      console.log(true && false);
+      console.log(0.2 >= 0 && 0.2 < 1/3);
+      console.log(true || false);
+      console.log(!true);
+
+      // in JS "Falsy" values are: 
+      // false 0 '' NaN undefined null     NaN (Not-A-Number)
+      // anything else is a "Truthy" value
+
+      // turnary operator "?". The advantage of using a turnary operator is that you can save the result to a variable
+      // works in the same way as a if statement. If the parameter on the left of the '?' is true when compared to the right of the ':'. Else it runs the right of the ':'
+      const result = true ? 'truthy' : 'falsy';
+
+      // the above is the equivalent of writing the above
+      let result2 = '';
+
+      if (true){
+        result2 = 'truthy';
+      } else{
+        result2 = 'falsy'
+      }
+
+      console.log(result);
+
+      // Guard Operator: when the left side clause is evaluated and returns FALSE, the right side won't be executed
+      false && console.log('hello');
+
+      // Guard Operators can be saved to a variable
+      const message = false && 'hello';
+      console.log(message);
+
+      // Default Operator || : if the left side clause is evaluated and returns TRUE, the right side won't be executed
+      const currency = 'EUR' || 'USD';
+      const currency2 = undefined || 'USD';
+      console.log(currency); // returns EUR
+      console.log(currency2);// returns USD
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

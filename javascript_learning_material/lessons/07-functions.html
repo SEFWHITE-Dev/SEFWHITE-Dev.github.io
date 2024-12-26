@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Functions</title>
+  </head>
+
+  <body>
+
+    <script>
+
+      // functions are declared by 'function', then name
+      function foo() {
+        console.log('hello world');
+        console.log(2 + 34);
+      }
+
+      foo();
+
+      // possible to set a default value
+      function calcTax(cost, taxPercent = 0.1) {
+        console.log(cost * taxPercent);
+      }
+
+      calcTax(2000, 0.1);
+      calcTax(10000, 0.2);
+      calcTax(5000); // when no second parameter is inputted, the default value is used
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red-button{
+      background-color: blue;
+      color: white;
+      border: 1px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button title=" Title " class="red-button"> Button </button>
+
+    <p>
+      paragraph with a 
+      <button class="red-button">
+        Button
+      </button>
+    </p>
+
+    <script>
+      // let are var
+      let variable_1 = 3;
+      console.log(variable_1);
+
+      // a var but you can't change its value after it is initialised
+      // const is used by default
+      const variable_2 = "message";
+
+      // var is now deprecated
+      // vars don't follow the rules of scopes, so a var initialized in a if statement can be referenced outside its scope
+      var variable_3 = variable_1 + variable_2;
+
+
+      console.log(typeof variable_2);
+      console.log(typeof variable_3);
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+
