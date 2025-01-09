@@ -1,0 +1,53 @@
+// use Media Query to include blocks of css properties when certain conditions are true
+// useful for various device screen sizes. always design for mobile first
+// use mix-in to resuse code, every time we write a media query
+
+//SCSS $variable-name to store values that will be reused
+
+// 640px, 1150px, 1400px
+$breakpoints-up: (
+  'medium': '40em',
+  'large': '71.875em',
+  'xlarge': '87.5em',
+);
+
+// 639px, 1109px, 1399px
+$breakpoints-down: (
+  'medium': '39.9375em',
+  'large': '71.8125em',
+  'xlarge': '87.4375em',
+);
+
+// mixin will load resuable code
+//     func name (param)
+@mixin breakpoint($size) {
+  // loads the code to be executed
+  // map-get like a SASS map(array or obj)
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+/*
+// Example on how a mixin would be loaded in another file
+h1 {
+  @include breakpoint(large){
+    font-size: 3rem;
+  }
+}
+
+
+// if we were to simple use a media query to change the value, if we have to change the 87.5 later down the line
+// we would end up having to change all the values across all files. using breakpoints lets us change the value in just one location
+@media (min-width: 87.5) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+*/

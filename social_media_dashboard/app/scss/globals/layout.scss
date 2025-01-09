@@ -1,0 +1,15 @@
+@use '../util' as *; // import without having to use the namespace
+
+// mobile layout
+.container {
+  padding: 0 rem(25); // padding for left/right
+  max-width: rem(1110);
+  margin: 0 auto rem(46); // center the elements
+
+  // desktop layout
+  @include breakpoint(large) {
+    padding: 0;
+    
+  }
+}
+
