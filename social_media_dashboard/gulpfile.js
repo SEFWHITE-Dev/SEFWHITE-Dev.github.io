@@ -13,6 +13,16 @@ const terser = require('gulp-terser');
 //const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 
+
+var gulp = require('gulp');
+var ghPages = require('gulp-gh-pages');
+ 
+gulp.task('deploy', function() {
+  return gulp.src('./dist/**/*')
+    .pipe(ghPages());
+});
+
+
 // setting the sass compiler to use dart-sass
 //sass.compiler = require('gulp-sass')(require('sass'));
 
