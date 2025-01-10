@@ -1,5 +1,0 @@
-// function to convert pixels to rems
-// by default 16px = 1rem
-@function rem($pixels, $context: 16) {
-  @return ( calc($pixels / $context)) * 1rem;
-}
