@@ -130,6 +130,7 @@ h2 {
   float: left;
   width: 25%;
   /* width: 70%; */
+  height:50%;
 }
 
 /* Clear floats after rows */
@@ -143,6 +144,7 @@ h2 {
 .content {
   background-color: white;
   padding: 10px;
+  height:50%;
 }
 
 
